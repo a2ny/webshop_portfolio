@@ -75,10 +75,13 @@ const LoginPage = () => {
   async function handleLogin(e) {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8081/login", {
-        username,
-        password,
-      });
+      const res = await axios.post(
+        "webshop-portfolio-fgif6mx84-solderandfluxtechs-projects.vercel.app/login",
+        {
+          username,
+          password,
+        }
+      );
       if (res.data.message === "exist") {
         const token = res.data.token;
         localStorage.setItem("authToken", token);
