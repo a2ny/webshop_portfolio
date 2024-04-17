@@ -89,6 +89,7 @@ const LoginPage = () => {
         navigate("/marketplace");
       } else {
         alert("Incorrect username or password");
+        console.log(res.data);
       }
     } catch (error) {
       alert(error, "Error in login");
