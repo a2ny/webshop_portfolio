@@ -36,11 +36,14 @@ const LoginPage = () => {
     ) {
       e.preventDefault();
       try {
-        const res = await axios.post("http://localhost:8081/signup", {
-          username,
-          password,
-          email,
-        });
+        const res = await axios.post(
+          "http://webshop-portfolio-api.vercel.app/signup",
+          {
+            username,
+            password,
+            email,
+          }
+        );
 
         const resData = res.data;
 

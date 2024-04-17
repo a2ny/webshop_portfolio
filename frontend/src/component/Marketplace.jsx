@@ -16,11 +16,14 @@ const Marketplace = ({ onAddToCart }) => {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const res = await axios.get("http://localhost:8081/displayProduct", {
-          name: String,
-          price: String,
-          image: String,
-        });
+        const res = await axios.get(
+          "http://webshop-portfolio-api.vercel.app/displayProduct",
+          {
+            name: String,
+            price: String,
+            image: String,
+          }
+        );
         setProducts(res.data);
       } catch (error) {
         console.error("Error fetching products:", error);

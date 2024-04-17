@@ -15,9 +15,12 @@ const AccountWindow = ({ isVisible, onClose }) => {
   useEffect(() => {
     async function fetchUserData() {
       try {
-        const res = await axios.post("http://localhost:8081/accountinfo", {
-          username: usernameToken,
-        });
+        const res = await axios.post(
+          "http://webshop-portfolio-api.vercel.app/accountinfo",
+          {
+            username: usernameToken,
+          }
+        );
 
         setUserData(res.data);
         setCurrPass(res.data.password);
@@ -54,10 +57,13 @@ const AccountWindow = ({ isVisible, onClose }) => {
 
       async function savePassword() {
         try {
-          const res = await axios.post("http://localhost:8081/savepassword", {
-            username: userData.username,
-            newPassword: currPass,
-          });
+          const res = await axios.post(
+            "http://webshop-portfolio-api.vercel.app/savepassword",
+            {
+              username: userData.username,
+              newPassword: currPass,
+            }
+          );
         } catch (error) {
           console.error("Error updating password:", error);
         }
@@ -73,9 +79,12 @@ const AccountWindow = ({ isVisible, onClose }) => {
   useEffect(() => {
     async function fetchUserProduct(e) {
       try {
-        const res = await axios.post("http://localhost:8081/getuserproduct", {
-          user: usernameToken,
-        });
+        const res = await axios.post(
+          "http://webshop-portfolio-api.vercel.app/getuserproduct",
+          {
+            user: usernameToken,
+          }
+        );
 
         setUserProduct(res.data);
       } catch (error) {}
@@ -116,9 +125,12 @@ const AccountWindow = ({ isVisible, onClose }) => {
 
   async function handleRemoveProduct(index) {
     try {
-      const res = await axios.post("http://localhost:8081/removeuserproduct", {
-        _id: productId[index],
-      });
+      const res = await axios.post(
+        "http://webshop-portfolio-api.vercel.app/removeuserproduct",
+        {
+          _id: productId[index],
+        }
+      );
 
       setUserProduct((prevUserProduct) => {
         const updatedUserProduct = [...prevUserProduct];

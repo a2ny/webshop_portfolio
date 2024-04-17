@@ -23,11 +23,15 @@ const AddproductWindow = ({ isVisible, onClose }) => {
         formData.append("image", image); // Append the image file to FormData
         formData.append("user", username);
 
-        await axios.post("http://localhost:8081/addproduct", formData, {
-          headers: {
-            "Content-Type": "multipart/form-data", // Set proper content type for FormData
-          },
-        });
+        await axios.post(
+          "http://webshop-portfolio-api.vercel.app/addproduct",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data", // Set proper content type for FormData
+            },
+          }
+        );
         console.log(username);
       }
     } catch (error) {
