@@ -55,6 +55,7 @@ app.post("/signup", async (req, res) => {
 // Login Response
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
+  console.log(username, password);
   try {
     const existingUser = await accounts.findOne({ username, password });
     if (existingUser) {
