@@ -1,0 +1,49 @@
+/* Style for the main navbar container */
+.navbar-main-container {
+  height: 4rem;
+  background-color: rgba(163, 255, 224, 0.438);
+  width: 100%;
+  position: static;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+/* Style for buttons within the navbar */
+.btn {
+  margin: 10px;
+}
+
+/* Style for navigation links */
+.nav-links {
+  margin-top: 10px;
+}
+
+/* Remove underline from all anchor links */
+a {
+  text-decoration: none;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .navbar-main-container {
+    height: auto; /* Adjust height to fit content */
+    max-height: 80px;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Align items to the center */
+    padding: 0.625rem; /* Add padding for better spacing */
+  }
+
+  .btn {
+    margin: 0; /* Adjust button margin for smaller screens */
+    padding: 0.375rem; /* Adjust button padding for smaller screens */
+    font-size: 0.6rem; /* Adjust font size for smaller screens */
+  }
+  .nav-links {
+    margin-top: -50px;
+  }
+  .navbar-main-container p {
+    visibility: hidden;
+  }
+}

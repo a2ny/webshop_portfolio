@@ -1,0 +1,30 @@
+.side-drawer {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-out;
+  border: 1px solid black;
+  overflow: scroll;
+  padding: 10px;
+}
+
+.side-drawer.show {
+  right: 0;
+}
+.form-control {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-items {
+  display: flex;
+  flex-direction: column;
+}
+.drawer-price-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}

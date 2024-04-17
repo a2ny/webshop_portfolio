@@ -1,0 +1,77 @@
+.accountwindow-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; /* Adjusted width for responsiveness */
+  max-width: 500px; /* Added max-width to prevent stretching on larger screens */
+  height: auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-out;
+  border: 1px solid black;
+  padding: 20px; /* Increased padding for better spacing */
+}
+
+.root-container {
+  margin: 20px auto; /* Center align and provide margin for better layout */
+  max-width: 90%; /* Adjusted max-width for responsiveness */
+}
+
+.input-pass-container {
+  display: flex;
+  flex-direction: column; /* Changed flex direction for better stacking */
+}
+
+.input-pass-container input {
+  font-size: 16px; /* Adjusted font size for better readability */
+  height: 40px; /* Increased height for better input field size */
+  width: 100%; /* Adjusted width to fill the container */
+  margin-bottom: 10px; /* Added margin between input fields */
+  padding: 5px; /* Adjusted padding for better input field appearance */
+}
+
+.account-info-container {
+  padding-top: 12px;
+}
+
+.password-main-container {
+  display: flex;
+  flex-direction: column; /* Changed flex direction for better stacking */
+  gap: 10px; /* Added gap between items for better spacing */
+}
+
+.userProduct-container {
+  display: flex;
+  flex-direction: column; /* Changed flex direction for better stacking */
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.product-data-container {
+  display: flex;
+  align-items: center;
+  padding: 5px 0; /* Added padding for better spacing */
+}
+
+.product-data-container > div {
+  flex: 1;
+  text-align: center; /* Center align text within div */
+}
+
+.userProduct-container .product-label-container > div {
+  flex: 1;
+  text-align: center; /* Center align text within div */
+}
+
+@media screen and (max-width: 768px) {
+  .accountwindow-container {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .input-pass-container input {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    height: 35px; /* Adjust height for smaller screens */
+    margin-bottom: 8px; /* Adjust margin for smaller screens */
+  }
+}

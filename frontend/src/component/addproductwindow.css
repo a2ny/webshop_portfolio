@@ -1,0 +1,32 @@
+.addproduct-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; /* Adjusted width for responsiveness */
+  max-width: 500px; /* Added max-width to prevent stretching on larger screens */
+  height: auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-out;
+  border: 1px solid black;
+  overflow: auto; /* Changed to 'auto' for automatic scrolling when needed */
+  padding: 20px; /* Increased padding for better spacing */
+}
+.addproduct-container input {
+  width: 100%; /* Make inputs fill the container */
+  margin-bottom: 10px; /* Add margin between inputs */
+  padding: 8px; /* Adjust padding for better appearance */
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+.root-container {
+  margin: 20px auto; /* Center align and provide margin for better layout */
+  max-width: 90%; /* Adjusted max-width for responsiveness */
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .addproduct-container {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+}
