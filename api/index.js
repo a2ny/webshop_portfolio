@@ -17,7 +17,7 @@ app.use(
     parameterLimit: 50000,
   })
 );
-app.options("*", cors());
+
 app.use(
   cors({
     origin: ["https://webshop-portfolio-api.vercel.app"],
