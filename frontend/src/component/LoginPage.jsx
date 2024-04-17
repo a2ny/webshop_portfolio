@@ -76,7 +76,7 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "webshop-portfolio-fgif6mx84-solderandfluxtechs-projects.vercel.app/login",
+        "http://webshop-portfolio-fgif6mx84-solderandfluxtechs-projects.vercel.app/login",
         {
           username,
           password,
