@@ -75,13 +75,10 @@ const LoginPage = () => {
   async function handleLogin(e) {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "https://webshop-portfolio.onrender.com/login",
-        {
-          username,
-          password,
-        }
-      );
+      const res = await axios.post("http://localhost:3001/login", {
+        username,
+        password,
+      });
       if (res.data.message === "exist") {
         const token = res.data.token;
         localStorage.setItem("authToken", token);
