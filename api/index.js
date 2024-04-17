@@ -20,7 +20,10 @@ app.use(
 
 app.use(
   cors({
-    origin: ["https://webshop-portfolio-api.vercel.app"],
+    origin: [
+      "https://webshop-portfolio.vercel.app/",
+      "https://webshop-portfolio-api.vercel.app",
+    ],
     method: ["POST", "GET"],
     credentials: true,
   })
