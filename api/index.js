@@ -17,13 +17,23 @@ app.use(
     parameterLimit: 50000,
   })
 );
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://webshop-portfolio-api.vercel.app"],
+    method: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
 app.get("/", cors(), (req, res) => {
   res.send("Welcome to the root endpoint");
 });
 
 // Start the server
+const PORT = 8081;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Signup response
