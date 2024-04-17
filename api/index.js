@@ -18,18 +18,7 @@ app.use(
   })
 );
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "http://10.120.11.4:3000",
-      "https://webshop-portfolio.vercel.app",
-      "https://webshop-portfolio-api.vercel.app",
-    ],
-    method: ["POST", "GET"],
-    credentials: true,
-  })
-);
+app.use(cors());
 
 app.get("/", cors(), (req, res) => {
   res.send("Welcome to the root endpoint");
