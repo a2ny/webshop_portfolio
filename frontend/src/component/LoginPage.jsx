@@ -76,7 +76,7 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://webshop-portfolio-api.vercel.app/login",
+        "https://webshop-portfolio.onrender.com/login",
         {
           username,
           password,
