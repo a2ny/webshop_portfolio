@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 mongoose
   .connect(
-    "mongodb+srv://solderandfluxtech:q1YYqFryX6smwc61@cluster0.nnsy8wh.mongodb.net/"
+    "mongodb+srv://solderandfluxtech:q1YYqFryX6smwc61@cluster0.nnsy8wh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => {
     console.log("DB Connected");
