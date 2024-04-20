@@ -36,14 +36,11 @@ const LoginPage = () => {
     ) {
       e.preventDefault();
       try {
-        const res = await axios.post(
-          "https://webshop-portfolio-api.vercel.app/signup",
-          {
-            username,
-            password,
-            email,
-          }
-        );
+        const res = await axios.post("http://3.25.143.30:3001/signup", {
+          username,
+          password,
+          email,
+        });
 
         const resData = res.data;
 
@@ -75,10 +72,11 @@ const LoginPage = () => {
   async function handleLogin(e) {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3001/login", {
+      const res = await axios.post("http://3.25.143.30:3001/login", {
         username,
         password,
       });
+      console.log("return from api", res.data.message);
       if (res.data.message === "exist") {
         const token = res.data.token;
         localStorage.setItem("authToken", token);

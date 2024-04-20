@@ -15,12 +15,9 @@ const AccountWindow = ({ isVisible, onClose }) => {
   useEffect(() => {
     async function fetchUserData() {
       try {
-        const res = await axios.post(
-          "http://webshop-portfolio-api.vercel.app/accountinfo",
-          {
-            username: usernameToken,
-          }
-        );
+        const res = await axios.post("http://3.25.143.30:3001/accountinfo", {
+          username: usernameToken,
+        });
 
         setUserData(res.data);
         setCurrPass(res.data.password);
@@ -57,13 +54,10 @@ const AccountWindow = ({ isVisible, onClose }) => {
 
       async function savePassword() {
         try {
-          const res = await axios.post(
-            "http://webshop-portfolio-api.vercel.app/savepassword",
-            {
-              username: userData.username,
-              newPassword: currPass,
-            }
-          );
+          const res = await axios.post("http://3.25.143.30:3001/savepassword", {
+            username: userData.username,
+            newPassword: currPass,
+          });
         } catch (error) {
           console.error("Error updating password:", error);
         }
@@ -79,12 +73,9 @@ const AccountWindow = ({ isVisible, onClose }) => {
   useEffect(() => {
     async function fetchUserProduct(e) {
       try {
-        const res = await axios.post(
-          "http://webshop-portfolio-api.vercel.app/getuserproduct",
-          {
-            user: usernameToken,
-          }
-        );
+        const res = await axios.post("http://3.25.143.30:3001/getuserproduct", {
+          user: usernameToken,
+        });
 
         setUserProduct(res.data);
       } catch (error) {}
@@ -126,7 +117,7 @@ const AccountWindow = ({ isVisible, onClose }) => {
   async function handleRemoveProduct(index) {
     try {
       const res = await axios.post(
-        "http://webshop-portfolio-api.vercel.app/removeuserproduct",
+        "http://3.25.143.30:3001/removeuserproduct",
         {
           _id: productId[index],
         }

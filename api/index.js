@@ -34,6 +34,7 @@ app.listen(PORT, () => {
 // Signup response
 app.post("/signup", async (req, res) => {
   const { username, password, email } = req.body;
+
   try {
     // Check if the username already exists in the database
     const existingUser = await accounts.findOne({ username });
@@ -60,7 +61,6 @@ app.post("/login", async (req, res) => {
     const existingUser = await accounts.findOne({ username, password });
     if (existingUser) {
       const token = jwt.sign({ username: existingUser.username }, "secret_key");
-      // Include token in response
       return res.status(200).json({ message: "exist", token, username });
     } else {
       return res.status(200).json({ message: "not exist" });

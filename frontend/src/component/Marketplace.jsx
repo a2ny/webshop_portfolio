@@ -33,6 +33,9 @@ const Marketplace = ({ onAddToCart }) => {
   }, []);
 
   function gen() {
+    if (!Array.isArray(products) || products.length === 0) {
+      return <div>No products available</div>;
+    }
     return products.map((product, index) => (
       <div className="product-container form-control" key={index}>
         <h4>{product.name}</h4>
