@@ -15,14 +15,14 @@ const AccountWindow = ({ isVisible, onClose }) => {
   useEffect(() => {
     async function fetchUserData() {
       try {
-        const res = await axios.post("http://3.25.143.30:3001/accountinfo", {
+        const res = await axios.post("http://localhost:3001/accountinfo", {
           username: usernameToken,
         });
 
         setUserData(res.data);
         setCurrPass(res.data.password);
       } catch (error) {
-        // Handle errors
+      
       }
     }
     fetchUserData();
@@ -54,7 +54,7 @@ const AccountWindow = ({ isVisible, onClose }) => {
 
       async function savePassword() {
         try {
-          const res = await axios.post("http://3.25.143.30:3001/savepassword", {
+          const res = await axios.post("http://localhost:3001/savepassword", {
             username: userData.username,
             newPassword: currPass,
           });
@@ -73,7 +73,7 @@ const AccountWindow = ({ isVisible, onClose }) => {
   useEffect(() => {
     async function fetchUserProduct(e) {
       try {
-        const res = await axios.post("http://3.25.143.30:3001/getuserproduct", {
+        const res = await axios.post("http://localhost:3001/getuserproduct", {
           user: usernameToken,
         });
 
@@ -117,7 +117,7 @@ const AccountWindow = ({ isVisible, onClose }) => {
   async function handleRemoveProduct(index) {
     try {
       const res = await axios.post(
-        "http://3.25.143.30:3001/removeuserproduct",
+        "http://localhost:3001/removeuserproduct",
         {
           _id: productId[index],
         }
@@ -125,7 +125,7 @@ const AccountWindow = ({ isVisible, onClose }) => {
 
       setUserProduct((prevUserProduct) => {
         const updatedUserProduct = [...prevUserProduct];
-        updatedUserProduct.splice(index, 1); // Remove the product at the specified index
+        updatedUserProduct.splice(index, 1);
         return updatedUserProduct;
       });
       alert("Removed Succesfull Refresh to update marketplace");

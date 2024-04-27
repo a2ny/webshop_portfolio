@@ -24,7 +24,7 @@ const AddproductWindow = ({ isVisible, onClose }) => {
         formData.append("user", username);
 
         await axios.post(
-          "http://webshop-portfolio-api.vercel.app/addproduct",
+          "http://localhost:3001/addproduct",
           formData,
           {
             headers: {

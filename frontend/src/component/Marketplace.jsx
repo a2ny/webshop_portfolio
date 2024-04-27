@@ -17,7 +17,7 @@ const Marketplace = ({ onAddToCart }) => {
     async function fetchProducts() {
       try {
         const res = await axios.get(
-          "http://webshop-portfolio-api.vercel.app/displayProduct",
+          "http://localhost:3001/displayProduct",
           {
             name: String,
             price: String,
