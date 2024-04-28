@@ -1,4 +1,4 @@
-/* Style for the main container holding product items */
+
 .product-main-container {
   display: flex;
   flex-wrap: wrap;
@@ -8,29 +8,31 @@
   flex-grow: 1;
 }
 
-/* Style for each individual product container */
 .product-container {
   flex-direction: column;
   width: 20rem;
   margin: 5px;
+  height: auto;
+  
+
 }
 
-/* Style for images inside product containers */
+
 .product-container img {
   max-width: 100%;
   height: auto;
 }
 
-/* Media queries for responsiveness */
+
 @media screen and (max-width: 768px) {
   .product-container {
-    width: 15rem; /* Adjust width for smaller screens */
+    width: 15rem; 
   }
 }
 
 @media screen and (max-width: 576px) {
   .product-container {
-    width: 100%; /* Take full width on extra small screens */
-    margin: 5px 0; /* Reduce margin for better spacing */
+    width: 100%;
+    margin: 5px 0; 
   }
 }

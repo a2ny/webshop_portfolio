@@ -72,7 +72,7 @@ const LoginPage = () => {
   async function handleLogin(e) {
     e.preventDefault();
     try {
-      const res = await axios.post("https://localhost:3001/login", {
+      const res = await axios.post("http://localhost:3001/login", {
         username,
         password,
       });

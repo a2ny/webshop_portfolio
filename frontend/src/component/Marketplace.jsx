@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./marketplace.css";
 import axios from "axios";
+
 const Marketplace = ({ onAddToCart }) => {
   const [cartItems, setCartItems] = useState([]);
 
@@ -30,8 +31,7 @@ const Marketplace = ({ onAddToCart }) => {
       }
     }
     fetchProducts();
-  }, []);
-
+  },[]);
   function gen() {
     if (!Array.isArray(products) || products.length === 0) {
       return <div>No products available</div>;
